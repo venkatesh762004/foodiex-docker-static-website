@@ -55,7 +55,7 @@ foodiex-docker-static-website/
 ### 1. Build Docker Image
 
 ```bash
-docker build -t foodiex-website:v2 .
+docker build -t foodiex-website .
 ```
 
 ### 2. Check Docker Image

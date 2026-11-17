@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="FoodieX - Delicious food delivered to your door.">
+  <title>FoodieX | Food Delivery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#home" class="logo"><span>Foodie</span><b>X.</b></a>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="cart-button" id="cartButton">
+        <span>Cart</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">✦ FRESH FOOD. FAST DELIVERY.</span>
+        <h1>Good food.<br>Good mood.<br><span>Great moments.</span></h1>
+        <p>Discover delicious meals made with fresh ingredients and delivered straight to your door.</p>
+        <div class="hero-actions">
+          <a href="#menu" class="primary-button">Explore Menu <span>→</span></a>
+          <a href="#about" class="text-button">Discover more</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>4.9★</strong><small>Customer rating</small></div>
+          <div><strong>30 min</strong><small>Average delivery</small></div>
+          <div><strong>100%</strong><small>Fresh ingredients</small></div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-glow"></div>
+        <div class="hero-image-wrap">
+          <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900" alt="Delicious gourmet burger">
+        </div>
+        <div class="floating-card rating-card">⭐ <strong>4.9</strong><small>Top rated</small></div>
+        <div class="floating-card delivery-card">🚀 <strong>30 min</strong><small>Fast delivery</small></div>
+        <div class="hero-orbit"></div>
+      </div>
+    </section>
+
+    <section class="categories section">
+      <div class="section-heading">
+        <div><span class="eyebrow">EXPLORE TASTES</span><h2>What are you craving?</h2></div>
+      </div>
+      <div class="category-list" id="categoryList">
+        <button class="category-chip active" data-category="All">🍽️ All food</button>
+        <button class="category-chip" data-category="Burger">🍔 Burgers</button>
+        <button class="category-chip" data-category="Pizza">🍕 Pizza</button>
+        <button class="category-chip" data-category="Asian">🍜 Asian</button>
+        <button class="category-chip" data-category="Dessert">🍰 Desserts</button>
+        <button class="category-chip" data-category="Drinks">🥤 Drinks</button>
+      </div>
+    </section>
+
+    <section class="menu-section section" id="menu">
+      <div class="section-heading menu-heading">
+        <div><span class="eyebrow">MADE WITH LOVE</span><h2>Our popular menu</h2><p>Freshly prepared favorites, just for you.</p></div>
+        <label class="search-box">
+          <span>⌕</span>
+          <input type="search" id="searchInput" placeholder="Search delicious food..." aria-label="Search food">
+        </label>
+      </div>
+      <div class="food-grid" id="foodGrid"></div>
+      <p class="empty-message" id="emptyMessage" hidden>No food items found. Try another search.</p>
+    </section>
+
+    <section class="promo-section section" id="about">
+      <div class="promo-content">
+        <span class="eyebrow">A LITTLE EXTRA HAPPINESS</span>
+        <h2>Made fresh.<br><span>Delivered with love.</span></h2>
+        <p>From the first bite to the last, we make every meal worth remembering. Great ingredients, great taste, and a little FoodieX magic.</p>
+        <a href="#menu" class="primary-button">Order your favorites →</a>
+      </div>
+      <div class="promo-image">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=900" alt="Fresh colorful food bowl">
+      </div>
+    </section>
+
+    <section class="contact-section section" id="contact">
+      <span class="eyebrow">WE'RE HERE FOR YOU</span>
+      <h2>Have a question?</h2>
+      <p>Contact our team at <a href="mailto:hello@foodiex.example">hello@foodiex.example</a></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="logo"><span>Foodie</span><b>X.</b></a>
+    <p>Good food. Good mood. © <span id="year"></span> FoodieX.</p>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-header">
+      <div><span class="eyebrow">YOUR ORDER</span><h2>Your cart</h2></div>
+      <button class="close-cart" id="closeCart" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">₹0</strong></div>
+      <button class="primary-button checkout-button" id="checkoutButton">Proceed to checkout →</button>
+      <small>Demo website — no real payment will be processed.</small>
+    </div>
+  </aside>
+
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="checkout-modal">
+      <button class="close-cart modal-close" id="closeCheckout" aria-label="Close checkout">✕</button>
+      <span class="eyebrow">ALMOST THERE</span>
+      <h2>Delivery details</h2>
+      <form id="checkoutForm">
+        <label>Your name<input type="text" id="customerName" required placeholder="Enter your name"></label>
+        <label>Phone number<input type="tel" id="customerPhone" required pattern="[0-9]{10}" placeholder="10-digit mobile number"></label>
+        <label>Delivery address<textarea id="customerAddress" required placeholder="Enter your full address"></textarea></label>
+        <button type="submit" class="primary-button checkout-button">Place demo order →</button>
+      </form>
+      <p class="form-note">Demo only. This form does not send your personal information to a server.</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
